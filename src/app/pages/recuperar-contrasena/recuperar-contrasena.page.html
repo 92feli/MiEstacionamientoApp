@@ -1,13 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>recuperar-contrasena</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recuperar-contrasena</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<div style="margin-top: 50%;">
+  <ion-content [fullscreen]="true">
+    <br><br><br>
+    <div>
+      <ion-img src="assets/images/logo-transparent-crop.png" alt="Logo_mi_parking"
+      style="width: 30%; padding-top: 15%; margin: auto;"></ion-img>
+    <br>
+    <br>
+   
+    <div class="container" style="width: 60%; margin: auto;">
+  
+      <ion-input class="custom" placeholder="Ingresa tu E-mail"></ion-input>
+  
+    </div>
+  
+    <br>
+    <!--BOTON recuperar -->
+    <div style="text-align: center">
+      <ion-button [routerLink]="['/home']">Recuperar Contraseña</ion-button>
+    </div>
+
+   
+
+    </div>
+    <ion-row>
+      <div style="margin: auto;">
+        <br>
+        <ion-label style="font-family:calibri; margin: auto;">
+          Envía un correo para poder recibir tu contraseña
+        </ion-label>
+      </div>
+    </ion-row>
+    
+  </ion-content>
+</div>
+
+
