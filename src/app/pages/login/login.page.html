@@ -1,60 +1,59 @@
-<ion-content [fullscreen]="true">
+<div style="margin-top: 40%;">
+  <ion-content [fullscreen]="true">
 
-  <br><br><br>
-  <ion-img src="assets/images/logo-transparent-crop.png" alt="Logo_mi_parking"
-    style="width: 50%; padding-top: 15%; margin: auto;"></ion-img>
-  <br>
-  <br>
-  <!--INPUT -->
-  <div class="container" style="width: 70%; margin: auto;">
-
-    <ion-input class="custom" placeholder="Usuario"></ion-input>
-
+    <br><br><br>
+    <ion-img src="assets/images/logo-transparent-crop.png" alt="Logo_mi_parking"
+      style="width: 30%; padding-top: 15%; margin: auto;"></ion-img>
     <br>
-
-    <ion-input class="custom" placeholder="Contraseña" type="password"></ion-input>
-
-  </div>
-
-  <br>
-  <!--BOTON INICIO SESION -->
-  <div style="text-align: center">
-    <ion-button [routerLink]="['/home']">Iniciar Sesión</ion-button>
-  </div>
-
-  <br>
-  <!--LABEL INGRESO SIN INICIO -->
-  <div style="text-align: center; font-size: 10px; text-decoration: underline;">
-    <ion-label href="homes.html">
-      Ingresar como invitado
-    </ion-label>
-  </div>
-  <br>
-  <br>
-  <!--LABEL NOS ESTÁS REGISTRADO -->
-
-  <div class="container" style="text-align: center;">
-    <div style=" margin-bottom: 10px;">
-      <ion-label style="font-family:calibri;">
-        ¿No estás registrado?
+    <br>
+    <!--INPUT -->
+    <div class="container" style="width: 70%; margin: auto;">
+  
+      <ion-input class="custom" placeholder="Usuario"></ion-input>
+  
+      <br>
+  
+      <ion-input class="custom" placeholder="Contraseña" type="password"></ion-input>
+  
+    </div>
+  
+    <br>
+    <!--BOTON INICIO SESION -->
+    <div style="text-align: center">
+      <ion-button [routerLink]="['/home']">Iniciar Sesión</ion-button>
+    </div>
+  
+    <br>
+    <!--LABEL INGRESO SIN INICIO -->
+    <div style="text-align: center; font-size: 10px; text-decoration: underline;">
+      <ion-label href="homes.html">
+        Ingresar como invitado
       </ion-label>
     </div>
-
-    <!--BOTON REGISTRO -->
-
-    <div>
-      <ion-button class="back" [routerLink]="['/registro']">Registrarme</ion-button>
+    <br>
+    <br>
+    <!--LABEL NOS ESTÁS REGISTRADO -->
+  
+    <div class="container" style="text-align: center;">
+      <div style=" margin-bottom: 10px;">
+        <ion-label style="font-family:calibri;">
+          ¿No estás registrado?
+        </ion-label>
+      </div>
+  
+      <!--BOTON REGISTRO -->
+  
+      <div>
+        <ion-button class="back" [routerLink]="['/registro']">Registrarme</ion-button>
+      </div>
     </div>
-  </div>
-<br>
-  <div class="container" style="text-align: center;">
-    <div style=" margin-bottom: 10px;">
-      <ion-label [routerLink]="['/recuperar-contrasena']" style="font-family:calibri; font-style: oblique;">
-        Olvidé mi contraseña
-      </ion-label>
+    <br>
+    <div class="container" style="text-align: center;">
+      <div style=" margin-bottom: 10px;">
+        <ion-label [routerLink]="['/recuperar-contrasena']" style="font-family:calibri; font-style: oblique;">
+          Olvidé mi contraseña
+        </ion-label>
+      </div>
     </div>
-
-  </div>
-
-
-</ion-content>
+  </ion-content>
+</div>
