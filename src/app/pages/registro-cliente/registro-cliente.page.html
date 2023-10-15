@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <ion-card class="main">
+
+    <ion-card-header style="width: 100%;">
+      <ion-card-title id="title-font">Registro de Cliente</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content >
+      <ion-img src="assets/images/Untitledaaaaa.png"
+        alt="logo-cliente" style="width:30%; margin:auto" >
+      </ion-img>
+
+      <ion-card-header style="width: 100%; margin: auto;">
+        <ion-card-title id="category-font">Datos Personales</ion-card-title>
+      </ion-card-header>
+
+      <div class="container">
+        <br>
+        <ion-input class="custom" placeholder="Rut"></ion-input>
+
+        <br>
+
+        <ion-input class="custom" placeholder="Nombre"></ion-input>
+
+        <br>
+
+        <ion-input class="custom" placeholder="Dirección"></ion-input>
+
+        <br>
+
+        <ion-input class="custom" placeholder="Correo Electrónico"></ion-input>
+
+        <br>
+
+        <ion-input class="custom" type="password" placeholder="Número de Tarjeta"></ion-input>
+      </div>
+      <br>
+      <br>
+      <ion-card-header style="width: 100%;">
+        <ion-card-title id="category-font">Datos del Vehículo</ion-card-title>
+      </ion-card-header>
+
+      <div class="container">
+        <br>
+        <ion-input class="custom" placeholder="Modelo"></ion-input>
+
+        <br>
+
+        <ion-input class="custom" placeholder="Patente"></ion-input>
+
+
+      </div>
+      <br>
+      <br>
+      <ion-card-header style="width: 100%;">
+        <ion-card-title id="category-font">Contraseña</ion-card-title>
+      </ion-card-header>
+
+      <div class="container">
+        <br>
+        <ion-input class="custom" type="password" placeholder="Ingresa Contraseña"></ion-input>
+
+        <br>
+
+        <ion-input class="custom" type="password" placeholder="Repite Contraseña"></ion-input>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="container">
+        <ion-row>
+          <ion-button [routerLink]="['/homes']">Registrarme</ion-button> 
+          <ion-button class="back" [routerLink]="['/registro']">Volver</ion-button>
+        </ion-row>
+       </div>  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <ion-footer style=" box-shadow: none;">
+        <ion-img style="height: 40px;" src="assets/images/logo-transparent-crop.png"
+          alt="Logo-Mi-Estacionamiento"></ion-img>
+      </ion-footer>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

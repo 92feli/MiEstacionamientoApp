@@ -1,0 +1,121 @@
+
+<ion-content [fullscreen]="true">
+  <ion-card class="main">
+
+    <ion-card-header style="width: 100%;">
+          <ion-card-title id="title-font">Registro de Dueño</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content style="margin: auto;">
+      
+      <!--AQUI VA LA FOTO DEL MATI DEL DUEÑO-->
+
+      <ion-card-header style="width: 100%;">
+        <ion-card-title id="category-font">Datos Personales</ion-card-title>
+      </ion-card-header>
+
+      <div class="container">
+        <br>
+        <ion-input class="custom" placeholder="Rut"></ion-input>
+    
+        <br>
+    
+        <ion-input class="custom" placeholder="Nombre"></ion-input>
+    
+        <br>
+    
+        <ion-input class="custom" placeholder="Dirección"></ion-input>
+
+        <br>
+    
+        <ion-input class="custom" placeholder="Correo Electrónico"></ion-input>
+    
+        <br>
+    
+        <ion-input class="custom" type="password" placeholder="Número de Tarjeta"></ion-input>
+      </div>
+
+
+      <br>
+      <br>
+
+
+
+      <ion-card-header style="width: 100%;">
+        <ion-card-title id="category-font">Contraseña</ion-card-title>
+      </ion-card-header>
+
+      
+      <div class="container" >
+        <br>
+        <ion-input class="custom" type="password" placeholder="Ingresa Contraseña"></ion-input>
+    
+        <br>
+    
+        <ion-input class="custom" type="password" placeholder="Repite Contraseña"></ion-input>
+   
+      </div>
+
+
+      <br>
+      <br>
+
+
+      <ion-card-header style="width: 100%;">
+        <ion-card-title id="category-font">Datos del Estacionamiento</ion-card-title>
+      </ion-card-header>
+      
+
+      <div class="container" >
+        <br>
+        <ion-input class="custom" placeholder="Nombre Estacionamiento"></ion-input>
+    
+        <br>
+    
+        <ion-input class="custom" placeholder="Dirección Estacionamiento"></ion-input>
+   
+        <br>
+        
+          <ion-card-title style="font-size: 17px; margin-left: 13px;">Dimensiones</ion-card-title>
+          <hr>
+       
+        
+          <ion-row>
+            <ion-col><ion-input class="custom-dimension" placeholder="Ancho (cm)"></ion-input></ion-col>
+            <ion-col><ion-input class="custom-dimension" placeholder="Largo(cm)"></ion-input></ion-col>
+            <ion-col><ion-input class="custom-dimension" placeholder="Alto(cm)"></ion-input></ion-col>
+          </ion-row>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+     
+          
+       <div class="container">
+        <ion-row>
+          <ion-button [routerLink]="['/homes']">Registrarme</ion-button> 
+          <ion-button class="back" [routerLink]="['/registro']">Volver</ion-button>
+        </ion-row>
+       </div>                
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <ion-footer style=" box-shadow: none;">
+        <ion-img style="height: 40px;" src="assets/images/logo-transparent-crop.png"
+            alt="Logo-Mi-Estacionamiento"></ion-img>
+      </ion-footer>  
+
+    </ion-card-content>
+
+
+
+
+
+  </ion-card>
+
+
+</ion-content>
+
