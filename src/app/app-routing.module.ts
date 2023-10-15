@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'splash',
     pathMatch: 'full'
   },
   {
@@ -34,7 +34,8 @@ const routes: Routes = [
   {
     path: 'transacciones',
     loadChildren: () => import('./pages/transacciones/transacciones.module').then( m => m.TransaccionesPageModule)
-  },  {
+  },
+  {
     path: 'splash',
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
