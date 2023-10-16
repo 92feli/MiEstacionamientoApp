@@ -1,4 +1,4 @@
-<div style="margin-top: 40%;">
+<div style="margin-top: 10%;">
   <ion-content [fullscreen]="true">
 
     <br><br><br>
@@ -7,22 +7,23 @@
     <br>
     <br>
     <!--INPUT -->
+    <form [formGroup]="Loginform" novalidate>
     <div class="container" style="width: 70%; margin: auto;">
-  
-      <ion-input class="custom" placeholder="Usuario"></ion-input>
+      
+      <ion-input class="custom" formControlName="email"  placeholder="Email"></ion-input>
   
       <br>
   
-      <ion-input class="custom" placeholder="Contraseña" type="password"></ion-input>
+      <ion-input class="custom" placeholder="Contraseña" formControlName="password" type="password"></ion-input>
   
     </div>
   
     <br>
     <!--BOTON INICIO SESION -->
     <div style="text-align: center">
-      <ion-button [routerLink]="['/home']">Iniciar Sesión</ion-button>
+      <ion-button (click)="login()">Iniciar Sesión</ion-button>
     </div>
-  
+  </form>
     <br>
     <!--LABEL INGRESO SIN INICIO -->
     <div style="text-align: center; font-size: 10px; text-decoration: underline;">
