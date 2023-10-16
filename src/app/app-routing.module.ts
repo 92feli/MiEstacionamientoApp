@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PaginaprotegidaGuard } from './guards/paginaprotegida.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'homes',
-    loadChildren: () => import('./homes/homes.module').then( m => m.HomesPageModule)
+    loadChildren: () => import('./homes/homes.module').then( m => m.HomesPageModule),
+    canActivate:[PaginaprotegidaGuard]
   },
   {
     path: 'registro-cliente',
