@@ -6,9 +6,16 @@
           "miestacionamiento-357de"
         ]
       }
+    },
+    "miestacionamiento2": {
+      "hosting": {
+        "app": [
+          "miestacionamiento2"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "miestacionamiento-357de"
+    "default": "miestacionamiento2"
   }
 }

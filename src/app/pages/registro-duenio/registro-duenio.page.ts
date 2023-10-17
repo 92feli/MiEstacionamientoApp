@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/authentication.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { RegistrarUserService } from 'src/app/registrar-user.service';
 
 @Component({
   selector: 'app-registro-duenio',
@@ -14,20 +15,27 @@ export class RegistroDuenioPage implements OnInit {
 
   Regisform: FormGroup
 
-  constructor(private toastController: ToastController,private alertController: AlertController,private loadingController: LoadingController,private authService: AuthenticationService, private router: Router, public formBuilder: FormBuilder) { 
+  constructor(private toastController: ToastController,private alertController: AlertController,private loadingController: LoadingController,private authService: AuthenticationService, private router: Router, public formBuilder: FormBuilder,private registrarUserService:RegistrarUserService) { 
 
   }
 
   ngOnInit() {
     // this.signUP()
     this.Regisform = this.formBuilder.group({
-      fullname:[''
-    ],
-      email: [
-        '',
-      ],
-      password: ['', 
-    ],
+      fullname:[''],
+      email: [ ''],
+      Rut:[ ''],
+      tarjeta: [''],
+      password: [''],
+      direccion:[''],
+      modelo: ['--'],
+      Patente:['--'],   
+      Nombre_esta: [''],
+      direccion_es: [''],
+      alto: [''],
+      ancho: [''],
+      largo: [''],
+      tip_cli:['Dueno'],
     });
   }
   get errorControl() {
@@ -53,6 +61,13 @@ export class RegistroDuenioPage implements OnInit {
       return console.log('Please provide all the required values!');
     }
   }
+  async regis(){
+    console.log(this.Regisform.value)
+    const response = this.registrarUserService.addcliente(this.Regisform.value);
+    console.log(response);
+  
+  }
+
   async presentToast(message: undefined) {
     console.log(message);
     

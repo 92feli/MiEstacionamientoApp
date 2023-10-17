@@ -4,13 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'miestacionamiento-357de',
-    appId: '1:36501976762:web:2bd9eb9a34f716ff7db483',
-    storageBucket: 'miestacionamiento-357de.appspot.com',
-    apiKey: 'AIzaSyDVXN5OP06RKbWK___nKMmXIc_wGPS0-NE',
-    authDomain: 'miestacionamiento-357de.firebaseapp.com',
-    messagingSenderId: '36501976762',
-    measurementId: 'G-KY5G7GN5N1',
+    projectId: 'miestacionamiento2',
+    appId: '1:202563428078:web:9470a34e8427e5d8d15dff',
+    storageBucket: 'miestacionamiento2.appspot.com',
+    apiKey: 'AIzaSyBa1q9TAbKeO2-wUF72BTzVG5dvXBZhDG8',
+    authDomain: 'miestacionamiento2.firebaseapp.com',
+    messagingSenderId: '202563428078',
+    measurementId: 'G-QY77LS9RB7',
   },
   production: false
 };

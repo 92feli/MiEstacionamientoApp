@@ -20,7 +20,7 @@
       <form [formGroup]="Regisform" novalidate> 
       <div class="container">
         <br>
-        <ion-input class="custom" placeholder="Rut"></ion-input>
+        <ion-input class="custom" formControlName="Rut" placeholder="Rut"></ion-input>
     
         <br>
     
@@ -28,7 +28,7 @@
     
         <br>
     
-        <ion-input class="custom" placeholder="Dirección"></ion-input>
+        <ion-input class="custom" formControlName="direccion" placeholder="Dirección"></ion-input>
 
         <br>
     
@@ -36,7 +36,7 @@
     
         <br>
     
-        <ion-input class="custom" type="password" placeholder="Número de Tarjeta"></ion-input>
+        <ion-input class="custom" type="password" formControlName="tarjeta" placeholder="Número de Tarjeta"></ion-input>
       </div>
 
 
@@ -72,11 +72,11 @@
 
       <div class="container" >
         <br>
-        <ion-input class="custom" placeholder="Nombre Estacionamiento"></ion-input>
+        <ion-input class="custom"  formControlName="Nombre_esta" placeholder="Nombre Estacionamiento"></ion-input>
     
         <br>
     
-        <ion-input class="custom" placeholder="Dirección Estacionamiento"></ion-input>
+        <ion-input class="custom" formControlName="direccion_es" placeholder="Dirección Estacionamiento"></ion-input>
    
         <br>
         
@@ -85,9 +85,9 @@
        
         
           <ion-row>
-            <ion-col><ion-input class="custom-dimension" placeholder="Ancho (cm)"></ion-input></ion-col>
-            <ion-col><ion-input class="custom-dimension" placeholder="Largo(cm)"></ion-input></ion-col>
-            <ion-col><ion-input class="custom-dimension" placeholder="Alto(cm)"></ion-input></ion-col>
+            <ion-col><ion-input class="custom-dimension" formControlName="ancho" placeholder="Ancho (cm)"></ion-input></ion-col>
+            <ion-col><ion-input class="custom-dimension" formControlName="largo" placeholder="Largo(cm)"></ion-input></ion-col>
+            <ion-col><ion-input class="custom-dimension" formControlName="alto" placeholder="Alto(cm)"></ion-input></ion-col>
           </ion-row>
       </div>
       <br>
@@ -98,7 +98,7 @@
           
        <div class="container">
         <ion-row>
-          <ion-button (click)="signUP()">Registrarme</ion-button> 
+          <ion-button (click)="signUP()" (click)="regis()" >Registrarme</ion-button> 
           <ion-button class="back" [routerLink]="['/registro']">Volver</ion-button>
         </ion-row>
        </div> 

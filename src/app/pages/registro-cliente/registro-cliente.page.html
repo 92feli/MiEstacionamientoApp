@@ -16,7 +16,7 @@
       <form [formGroup]="Regisform" novalidate>
       <div class="container">
         <br>
-        <ion-input class="custom" placeholder="Rut"></ion-input>
+        <ion-input class="custom" formControlName="Rut" placeholder="Rut"></ion-input>
 
         <br>
 
@@ -24,7 +24,7 @@
 
         <br>
 
-        <ion-input class="custom" placeholder="Dirección"></ion-input>
+        <ion-input class="custom" formControlName="direccion" placeholder="Dirección"></ion-input>
 
         <br>
 
@@ -32,7 +32,7 @@
 
         <br>
 
-        <ion-input class="custom" type="password" placeholder="Número de Tarjeta"></ion-input>
+        <ion-input class="custom" type="password" formControlName="tarjeta" placeholder="Número de Tarjeta"></ion-input>
       </div>
       <br>
       <br>
@@ -42,11 +42,11 @@
 
       <div class="container">
         <br>
-        <ion-input class="custom" placeholder="Modelo"></ion-input>
+        <ion-input class="custom" formControlName="modelo" placeholder="Modelo"></ion-input>
 
         <br>
 
-        <ion-input class="custom" placeholder="Patente"></ion-input>
+        <ion-input class="custom" formControlName="Patente" placeholder="Patente"></ion-input>
 
 
       </div>
@@ -70,7 +70,7 @@
       <br>
       <div class="container">
         <ion-row>
-          <ion-button (click)="signUP()">Registrarme</ion-button> 
+          <ion-button (click)="regis()" (click)="signUP()">Registrarme</ion-button> 
           <ion-button class="back" [routerLink]="['/registro']">Volver</ion-button>
         </ion-row>
        </div>  
