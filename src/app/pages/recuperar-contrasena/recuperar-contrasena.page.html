@@ -10,14 +10,14 @@
    
     <div class="container" style="width: 60%; margin: auto;">
   
-      <ion-input class="custom" placeholder="Ingresa tu E-mail"></ion-input>
+      <ion-input class="custom"  [(ngModel)]="email"  placeholder="Ingresa tu E-mail"></ion-input>
   
     </div>
   
     <br>
     <!--BOTON recuperar -->
     <div style="text-align: center">
-      <ion-button [routerLink]="['/home']">Recuperar Contraseña</ion-button>
+      <ion-button (click)="reset()">Recuperar Contraseña</ion-button>
     </div>
 
    
