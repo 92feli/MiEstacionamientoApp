@@ -57,7 +57,7 @@ export class RegistroClientePage implements OnInit {
     console.log(message);
     
     const toast = await this.toastController.create({
-      message: message,
+      message: "Creacion de cuenta Erronea",
       duration: 1500,
       position: 'top',
     });

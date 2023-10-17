@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homes',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomesPage implements OnInit {
 
-  constructor() { }
+  email :any
+  constructor(private authService: AuthenticationService,private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+   
+    this.authService.getProfile().then((user) =>{
+        this.email = user?.email
+        console.log(user);
+        
+    })
   }
 
+  SignOut(){
+
+  this.authService.SignOut().then(() =>{
+    this.router.navigate(['/login'])
+  })
+ }
 }

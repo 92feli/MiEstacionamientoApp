@@ -54,7 +54,7 @@ export class LoginPage implements OnInit {
     console.log(message);
 
     const toast = await this.toastController.create({
-      message: message,
+      message: "Inicio de sesion incorrecto",
       duration: 1500,
       position: 'top',
     });
