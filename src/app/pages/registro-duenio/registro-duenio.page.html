@@ -17,14 +17,14 @@
       <ion-card-header style="width: 100%;">
         <ion-card-title id="category-font">Datos Personales</ion-card-title>
       </ion-card-header>
-
+      <form [formGroup]="Regisform" novalidate> 
       <div class="container">
         <br>
         <ion-input class="custom" placeholder="Rut"></ion-input>
     
         <br>
     
-        <ion-input class="custom" placeholder="Nombre"></ion-input>
+        <ion-input class="custom" formControlName="fullname" placeholder="Nombre"></ion-input>
     
         <br>
     
@@ -32,7 +32,7 @@
 
         <br>
     
-        <ion-input class="custom" placeholder="Correo Electrónico"></ion-input>
+        <ion-input class="custom" formControlName="email" placeholder="Correo Electrónico"></ion-input>
     
         <br>
     
@@ -52,7 +52,7 @@
       
       <div class="container" >
         <br>
-        <ion-input class="custom" type="password" placeholder="Ingresa Contraseña"></ion-input>
+        <ion-input class="custom" formControlName="password" type="password" placeholder="Ingresa Contraseña"></ion-input>
     
         <br>
     
@@ -98,10 +98,11 @@
           
        <div class="container">
         <ion-row>
-          <ion-button [routerLink]="['/homes']">Registrarme</ion-button> 
+          <ion-button (click)="signUP()">Registrarme</ion-button> 
           <ion-button class="back" [routerLink]="['/registro']">Volver</ion-button>
         </ion-row>
-       </div>                
+       </div> 
+      </form>               
       <br>
       <br>
       <br>
