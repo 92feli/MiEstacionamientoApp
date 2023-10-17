@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "miestacionamiento-357de": {
+      "hosting": {
+        "app": [
+          "miestacionamiento-357de"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "miestacionamiento-357de"
+  }
+}
