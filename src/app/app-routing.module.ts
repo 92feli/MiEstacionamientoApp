@@ -50,13 +50,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
   {
-    path: '**',
-    redirectTo: 'not-found',
-    pathMatch: 'full'
-  },  {
     path: 'duenio-home',
     loadChildren: () => import('./pages/duenio-home/duenio-home.module').then( m => m.DuenioHomePageModule)
   },
+  {//esta va al final sino no lee las paginas XDDDDD
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  },
+
 
 
 
