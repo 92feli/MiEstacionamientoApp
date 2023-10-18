@@ -57,7 +57,11 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'not-found',
     pathMatch: 'full'
+  },  {
+    path: 'prueba',
+    loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)
   },
+
 
 
 

@@ -1,13 +1,141 @@
-<ion-header [translucent]="true">
+<!--Este es el menu inicio el boton más el logo principal-->
+
+
+<ion-header>
   <ion-toolbar>
-    <ion-title>duenio-home</ion-title>
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-menu-toggle>
+            <img style="height: 50px; margin-top: 5px; margin-left: 5px;" src='assets/images/logo-p.png'>
+          </ion-menu-toggle>
+        </ion-toolbar>
+      </ion-header>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">duenio-home</ion-title>
+
+<ion-menu contentId="main-content">
+  <!-- Aqui va lo azul del menú donde ponemos el perfil y el nombre-->
+  <ion-header>
+
+    <ion-toolbar style="height: 150px;">
+      <ion-title style="background-color:#226699 ;">
+        <ion-row>
+          <ion-col size="1">
+            <div>
+              <ion-icon  class="head-menu-icon" name="person-circle-outline"></ion-icon>
+            </div>
+            
+            
+            <ion-button>
+              Cambiar Perfil
+            </ion-button>
+          </ion-col>
+          <ion-col style="margin-top: 35px; text-align: right; margin-right: 10px; color: white;">
+            <div style="margin-bottom:10%;">
+              <ion-label style="font-size: 15px;">
+                Felipe@gmail.com
+              </ion-label>
+              <br>
+              <ion-label style="font-size: 16px; font-style: oblique;">
+                Cliente
+              </ion-label>
+            </div>
+           
+          </ion-col>
+        </ion-row>
+      </ion-title>
+
     </ion-toolbar>
   </ion-header>
-</ion-content>
+  <!-- fin de lo azul del menú-->
+
+  <!-- Aqui va la lista con los iconos del menu lateral azul-->
+  <ion-content class="ion-padding">
+
+    <ion-list lines="none">
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="analytics-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-label [routerLink]="['/transacciones']" class="list-button">Mis Transacciones</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="card-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-label class="list-button">Agregar Tarjeta</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="settings-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-label class="list-button">Opciones</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="exit-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-label class="list-button">Cerrar Sesión</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+    </ion-list>
+
+
+  </ion-content>
+  <!-- fin del menu de lista con los iconos-->
+
+</ion-menu>
+<!-- fin menu inicio-->
+
+
+<!--fin de todo el menu menú-->
+
+<!--AQUÍ EMPIEZA TODO EL CONTENIDO-->
+  <ion-content [fullscreen]="true">
+
+    <ion-row>
+      <ion-col size="2" style="margin: 30px;">
+        <ion-card style="width: 500px;">
+          <img alt="Silhouette of mountains" src="assets/images/qwerty.jpg" />
+          <ion-card-header>
+            <ion-card-title>(Nombre estac)</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+    
+          <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    
+    </ion-row>
+
+
+
+
+  </ion-content>
+
