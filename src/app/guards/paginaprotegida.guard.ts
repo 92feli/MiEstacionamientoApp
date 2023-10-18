@@ -20,11 +20,13 @@ export class PaginaprotegidaGuard implements CanActivate {
     
       if( this.ngFireAuth.currentUser){
 
-        alert("Testeo OK")
+        //alert("Testeo OK")
+        console.log("Testeo OK")
         return true;
       }
       else{
-        alert("debe Loguearse")
+        //alert("debe Loguearse")
+        console.log("debe Loguearse")
         return false;
       }
 
