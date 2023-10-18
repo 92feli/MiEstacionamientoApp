@@ -17,4 +17,15 @@ addcliente(datos:Datos){
 }
 
 
+getCliente(): Observable<Datos[]> {
+  const placeRef = collection(this.firestore, 'Clientes');
+  return collectionData(placeRef, { idField: 'id' }) as Observable<Datos[]>;
+}
+
+deleteCliente(datos: Datos) {
+  const cliref = doc(this.firestore, `Clientes/${datos.id}`);
+  return deleteDoc(cliref);
+}
+
+
 }
