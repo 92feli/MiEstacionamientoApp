@@ -28,10 +28,20 @@ getCliente(): Observable<Datos[]> {
   return collectionData(placeRef, { idField: 'id' }) as Observable<Datos[]>;
 }
 
+getEstacionamiento(): Observable<Estacionamiento[]> {
+  const placeRef = collection(this.firestore, 'Estacionamientos');
+  return collectionData(placeRef, { idField: 'id' }) as Observable<Estacionamiento[]>;
+}
+
+
 deleteCliente(datos: Datos) {
   const cliref = doc(this.firestore, `Clientes/${datos.id}`);
   return deleteDoc(cliref);
 }
 
+deleteEstacionamiento(datos: Estacionamiento) {
+  const cliref = doc(this.firestore, `Clientes/${datos.id}`);
+  return deleteDoc(cliref);
+}
 
 }
