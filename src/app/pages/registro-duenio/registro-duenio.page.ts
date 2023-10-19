@@ -36,6 +36,7 @@ export class RegistroDuenioPage implements OnInit {
       ancho: [''],
       largo: [''],
       tip_cli:['Dueno'],
+      tarifa:[''],
     });
   }
   get errorControl() {

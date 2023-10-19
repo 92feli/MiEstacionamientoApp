@@ -39,6 +39,7 @@ export class RegistroClientePage implements OnInit {
       ancho: ['--'],
       largo: ['--'],
       tip_cli:['Cliente'],
+      tarifa:['--']
     });
   }
   get errorControl() {

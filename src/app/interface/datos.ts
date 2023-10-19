@@ -15,4 +15,5 @@ export default  interface Datos {
     alto: string;
     ancho: string;
     largo: string;
+    tarifa: number;
 }
