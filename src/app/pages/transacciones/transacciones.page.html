@@ -92,6 +92,13 @@
 
   <ion-title class="title-font">Mis Transacciones</ion-title>
   <br>
+
+
+  <!-- Aqui empieza la card -->
+
+  <ion-item-sliding *ngFor="let item of notes">
+
+
   <ion-card class="reserve">
     <ion-grid>
       <ion-row>
@@ -103,14 +110,15 @@
 
         <ion-col size="7">
           <ion-card-header>
-            <ion-card-title>Donde Pepito</ion-card-title>
+            <ion-card-title>{{item?.Nombre_esta}}</ion-card-title>
             <ion-row>
               <ion-card-subtitle class="date">20 sept. 2023</ion-card-subtitle>
-              <ion-card-subtitle class="address">Almirante Latorre 666, Santiago</ion-card-subtitle>
+              <ion-card-subtitle class="address">{{item?.direccion_es}}</ion-card-subtitle>
               <br>
               <br>
             </ion-row>
-            <ion-card-subtitle>CLP 15480</ion-card-subtitle>
+            <ion-card-subtitle>CLP ${{item?.tarifa}}</ion-card-subtitle>
+            <ion-card-subtitle>Alto: {{item?.alto}} CM / Ancho {{item?.ancho}} CM / Largo  {{item?.largo}} CM</ion-card-subtitle>
           </ion-card-header>
         </ion-col>
         <ion-col id="btns" size="2">
@@ -127,6 +135,8 @@
     </ion-grid>
 
   </ion-card>
+</ion-item-sliding>
+<!-- Aqui Termina la card -->
 
   <ion-card class="reserve">
     <ion-grid>
