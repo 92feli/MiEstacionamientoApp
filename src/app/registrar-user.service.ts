@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import Datos from './interface/datos'; 
+import Estacionamiento from './interface/estacionamiento';
+
 
 
 @Injectable({
@@ -16,6 +18,10 @@ addcliente(datos:Datos){
   return addDoc(cliref, datos);
 }
 
+addEstacionamiento(esta:Estacionamiento){
+  const cliref = collection(this.firestore, 'Estacionamientos');
+  return addDoc(cliref, esta);
+}
 
 getCliente(): Observable<Datos[]> {
   const placeRef = collection(this.firestore, 'Clientes');

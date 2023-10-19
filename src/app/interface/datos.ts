@@ -9,11 +9,4 @@ export default  interface Datos {
     //cosas de los autos
     modelo: string;
     Patente: string;
-    //cosas de los estacionamiento
-    Nombre_esta: string;
-    direccion_es: string;
-    alto: string;
-    ancho: string;
-    largo: string;
-    tarifa: number;
 }

@@ -14,6 +14,7 @@ import { RegistrarUserService } from 'src/app/registrar-user.service';
 export class RegistroDuenioPage implements OnInit {
 
   Regisform: FormGroup
+  Regisform2: FormGroup
 
   constructor(private toastController: ToastController,private alertController: AlertController,private loadingController: LoadingController,private authService: AuthenticationService, private router: Router, public formBuilder: FormBuilder,private registrarUserService:RegistrarUserService) { 
 
@@ -30,12 +31,17 @@ export class RegistroDuenioPage implements OnInit {
       direccion:[''],
       modelo: ['--'],
       Patente:['--'],   
+      tip_cli:['Dueno'],
+    });
+
+    this.Regisform2 = this.formBuilder.group({
+      email: [ this.Regisform.value.email],
+      Rut:[ this.Regisform.value.Rut],
       Nombre_esta: [''],
       direccion_es: [''],
       alto: [''],
       ancho: [''],
       largo: [''],
-      tip_cli:['Dueno'],
       tarifa:[''],
     });
   }
@@ -65,6 +71,23 @@ export class RegistroDuenioPage implements OnInit {
   async regis(){
     console.log(this.Regisform.value)
     const response = this.registrarUserService.addcliente(this.Regisform.value);
+    console.log(response);
+  
+  }
+
+  async Estacionamiento(){
+    this.Regisform2 = this.formBuilder.group({
+      email: [ this.Regisform.value.email],
+      Rut:[ this.Regisform.value.Rut],
+      Nombre_esta: [this.Regisform2.value.Nombre_esta],
+      direccion_es: [this.Regisform2.value.direccion_es],
+      alto: [this.Regisform2.value.alto],
+      ancho: [this.Regisform2.value.ancho],
+      largo: [this.Regisform2.value.largo],
+      tarifa:[this.Regisform2.value.tarifa],
+    })
+    console.log(this.Regisform2.value)
+    const response = await this.registrarUserService.addEstacionamiento(this.Regisform2.value);
     console.log(response);
   
   }
