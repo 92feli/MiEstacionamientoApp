@@ -35,7 +35,8 @@ const routes: Routes = [
   },
   {
     path: 'transacciones',
-    loadChildren: () => import('./pages/transacciones/transacciones.module').then( m => m.TransaccionesPageModule)
+    loadChildren: () => import('./pages/transacciones/transacciones.module').then( m => m.TransaccionesPageModule),
+    canActivate:[PaginaprotegidaGuard]
   },
   {
     path: 'splash',
@@ -53,11 +54,12 @@ const routes: Routes = [
     path: 'duenio-home',
     loadChildren: () => import('./pages/duenio-home/duenio-home.module').then( m => m.DuenioHomePageModule)
   },
-  {//esta va al final sino no lee las paginas XDDDDD
+  {//esta va al final sino no lee las paginas
     path: '**',
     redirectTo: 'not-found',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'prueba',
     loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)
   },

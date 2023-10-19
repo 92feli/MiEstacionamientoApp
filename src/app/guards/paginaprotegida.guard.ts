@@ -17,7 +17,10 @@ export class PaginaprotegidaGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    
+    /* Se intenta Crear Logica de Validacion con ngFireAuth de Firebase para que solo permitiera navegar al homes mediante el inicio de sesion ,
+      pero finalmente no funciona. 
+
+
       if( this.ngFireAuth.currentUser){
 
         //alert("Testeo OK")
@@ -29,7 +32,10 @@ export class PaginaprotegidaGuard implements CanActivate {
         console.log("debe Loguearse")
         return false;
       }
+      
+    */  
 
+      return true ;
   }
   
 }
