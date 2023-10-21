@@ -14,8 +14,8 @@ export class HomePage {
   mapRef: ElementRef<HTMLElement>;
   newMap: GoogleMap;
   center : any = {
-    lat: -33.5984268,
-    lng: -70.5780473,
+    lat: -33.5989172,
+    lng: -70.5783629,
   };
 
   markerId: string ;
@@ -38,10 +38,10 @@ export class HomePage {
     this.markerId = await this.newMap.addMarker({
 
     coordinate :{
-        lat: -33.5984268,
-        lng: -70.5780473,
+        lat: -33.5989172,
+        lng: -70.5783629,
     },
-      draggable:true
+      draggable:false
 
     });
 
