@@ -1,31 +1,70 @@
-<ion-menu contentId="main-content">
+<!--Este es el menu inicio el boton más el logo principal-->
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <div class="ion-page" id="main-content">
+        <ion-header>
+          
+            <ion-toolbar>
+              <ion-row>
+                <ion-menu-toggle>
+                  <img style="height: 50px; margin-top: 5px; margin-left: 5px;" src='assets/images/logo-p.png'>
+                </ion-menu-toggle>
+                <ion-title><ion-img class="main-logo" src="assets/images/logo-transparent-crop.png"
+                  alt="Logo-Mi-Estacionamiento"></ion-img></ion-title>
+              </ion-row>
+              
+            </ion-toolbar>
+         
+          
+        </ion-header>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+
+
+
+  <ion-menu contentId="main-content">
+    <!-- Aqui va lo azul del menú donde ponemos el perfil y el nombre-->
     <ion-header>
-      <ion-toolbar>
-        <ion-router-outlet></ion-router-outlet>
-        <ion-title style="height: 150px; background-color:#226699 ;">
+  
+      <ion-toolbar style="height: 150px;">
+        <ion-title style="background-color:#226699 ;">
           <ion-row>
-            <ion-col>
-              <ion-icon class="head-menu-icon" name="person-circle-outline"></ion-icon>
-              <br>
-              <ion-button class="head-menu-button">
+            <ion-col size="1">
+              <div>
+                <ion-icon class="head-menu-icon" name="person-circle-outline"></ion-icon>
+              </div>
+  
+  
+              <ion-button>
                 Cambiar Perfil
               </ion-button>
             </ion-col>
             <ion-col style="margin-top: 35px; text-align: right; margin-right: 10px; color: white;">
-              <ion-label>
-                ?????
-              </ion-label>
-              <br>
-              <ion-label style="font-size: 16px; font-style: oblique;">
-                Cliente
-              </ion-label>
+              <div>
+                <ion-label style="font-size: 15px;">
+                  Felipe@gmail.com
+                </ion-label>
+                <br>
+                <ion-label style="font-size: 16px; font-style: oblique;">
+                  Cliente
+                </ion-label>
+              </div>
+  
             </ion-col>
           </ion-row>
         </ion-title>
+  
       </ion-toolbar>
     </ion-header>
-    <br>
-    <ion-content>
+    <!-- fin de lo azul del menú-->
+  
+    <!-- Aqui va la lista con los iconos del menu lateral azul-->
+    <ion-content class="ion-padding">
+  
       <ion-list lines="none">
   
         <ion-item>
@@ -67,7 +106,7 @@
               <ion-icon name="exit-outline"></ion-icon>
             </ion-col>
             <ion-col>
-              <ion-label  class="list-button">Cerrar Sesión</ion-label >
+              <ion-label class="list-button">Cerrar Sesión</ion-label>
             </ion-col>
           </ion-row>
         </ion-item>
@@ -75,23 +114,29 @@
   
       </ion-list>
   
-    </ion-content>
-  </ion-menu>
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>       
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="background-image">
   
-      <div >
-        <ion-button> Obtener Ubicación</ion-button>
-      </div>
     </ion-content>
-  </div>
+    <!-- fin del menu de lista con los iconos-->
+  
+  </ion-menu>
+  <!-- fin menu inicio-->
+  
+  
+  <!--fin de todo el menu menú-->
+  
+  
+  
+  
+  
+    <capacitor-google-map #map></capacitor-google-map>
+  
 
-  <capacitor-google-map #map></capacitor-google-map>
+</ion-content>
+
+
+
+  
+
+
+
 

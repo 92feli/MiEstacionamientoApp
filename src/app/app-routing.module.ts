@@ -54,17 +54,17 @@ const routes: Routes = [
     path: 'duenio-home',
     loadChildren: () => import('./pages/duenio-home/duenio-home.module').then( m => m.DuenioHomePageModule)
   },
-  {//esta va al final sino no lee las paginas
-    path: '**',
-    redirectTo: 'not-found',
-    pathMatch: 'full'
-  },
+
   {
     path: 'prueba',
     loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)
   },
 
-
+  {//esta va al final sino no lee las paginas
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  },
 
 
 
