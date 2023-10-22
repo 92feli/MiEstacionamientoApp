@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PaginaprotegidaGuard } from './guards/paginaprotegida.guard';
 import {AuthGuard}  from  '@angular/fire/auth-guard' ;
-
+import { canActivate ,redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate:[AuthGuard]
+    ...canActivate(()=>redirectUnauthorizedTo(['/login'])),
+    
     
   },
   {
