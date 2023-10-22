@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
 
       if (user) {
         loading.dismiss();
-        this.router.navigate(['/homes'])
+        this.router.navigate(['/home'])
       }
     } else {
       return console.log('Please provide all the required values!');

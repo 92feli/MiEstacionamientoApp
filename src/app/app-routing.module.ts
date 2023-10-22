@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PaginaprotegidaGuard } from './guards/paginaprotegida.guard';
 
+
 const routes: Routes = [
   {
     path: 'home',
