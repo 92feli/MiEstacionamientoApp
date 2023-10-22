@@ -46,7 +46,7 @@
             <ion-col style="margin-top: 35px; text-align: right; margin-right: 10px; color: white;">
               <div>
                 <ion-label style="font-size: 15px;">
-                  Felipe@gmail.com
+                  {{email}}
                 </ion-label>
                 <br>
                 <ion-label style="font-size: 16px; font-style: oblique;">
@@ -106,7 +106,7 @@
               <ion-icon name="exit-outline"></ion-icon>
             </ion-col>
             <ion-col>
-              <ion-label class="list-button">Cerrar Sesión</ion-label>
+              <ion-label class="list-button" (click)="SignOut()">Cerrar Sesión</ion-label>
             </ion-col>
           </ion-row>
         </ion-item>
