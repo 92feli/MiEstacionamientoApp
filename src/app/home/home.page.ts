@@ -37,12 +37,12 @@ export class HomePage {
 
         this.markerId = await this.newMap.addMarker({
 
-            iconUrl:"assets/images/logo-p.png",
+            iconUrl:"assets/images/marcador-p.png",
 
             iconSize: 
             {
                 width: 35,
-                height: 35,
+                height: 48,
             },
 
             coordinate: {
