@@ -369,7 +369,7 @@ export class HomePage {
                     "saturation": -100
                 },
                 {
-                    "visibility": "simplified"
+                    "visibility": "off"
                 }
             ]
         },
