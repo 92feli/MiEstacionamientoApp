@@ -10,8 +10,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     ...canActivate(()=>redirectUnauthorizedTo(['/login'])),
-    
-    
+      
   },
   {
     path: '',
@@ -38,7 +37,7 @@ const routes: Routes = [
   {
     path: 'transacciones',
     loadChildren: () => import('./pages/transacciones/transacciones.module').then( m => m.TransaccionesPageModule),
-    canActivate:[AuthGuard]
+    ...canActivate(()=>redirectUnauthorizedTo(['/login'])),
   },
   {
     path: 'splash',
@@ -55,7 +54,7 @@ const routes: Routes = [
   {
     path: 'duenio-home',
     loadChildren: () => import('./pages/duenio-home/duenio-home.module').then( m => m.DuenioHomePageModule),
-    canActivate:[AuthGuard]
+    ...canActivate(()=>redirectUnauthorizedTo(['/login'])),
   },
 
   {
