@@ -11,6 +11,7 @@ import { RegistroClientePage } from '../pages/registro-cliente/registro-cliente.
 import { RegistroDuenioPage } from '../pages/registro-duenio/registro-duenio.page';
 import { SplashPage } from '../pages/splash/splash.page';
 import { TransaccionesPage } from '../pages/transacciones/transacciones.page';
+import { ReservaClientePage } from '../pages/reserva-cliente/reserva-cliente.page';
 
 const routes: Routes = [
   {
@@ -68,7 +69,11 @@ const routes: Routes = [
         component: TransaccionesPage
       },
 
+      {
 
+        path: 'reserva-cliente',
+        component:ReservaClientePage
+      }
 
 
     ]

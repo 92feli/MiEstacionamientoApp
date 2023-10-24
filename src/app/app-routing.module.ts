@@ -62,12 +62,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)
   },
 
+  
+  {
+    path: 'reserva-cliente',
+    loadChildren: () => import('./pages/reserva-cliente/reserva-cliente.module').then( m => m.ReservaClientePageModule),
+    ...canActivate(()=>redirectUnauthorizedTo(['/login'])),
+  },
+
   {//esta va al final sino no lee las paginas
     path: '**',
     redirectTo: 'not-found',
     pathMatch: 'full'
   },
-
 
 
 ];
