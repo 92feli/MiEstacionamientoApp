@@ -31,12 +31,21 @@ export class TransaccionesPage implements OnInit {
     this.noteSub = this.note.notes.subscribe({
       next: (notes) => {
         this.notes = notes;
+        notes.sort((a, b)=> {
+          if (a.Nombre_esta === b.Nombre_esta){
+            return a.Nombre_esta < b.Nombre_esta ? -1 : 1
+          } else {
+            return a.Nombre_esta < b.Nombre_esta ? -1 : 1
+          }
+        })
       },
+      
       error: (e) => {
         console.log(e);
       }
     });
 
+   
   }
 
   SignOut(){
