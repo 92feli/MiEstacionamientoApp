@@ -25,7 +25,11 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
-  
+  {
+    path: 'homes',
+    loadChildren: () => import('./homes/homes.module').then( m => m.HomesPageModule),
+    canActivate:[PaginaprotegidaGuard]
+  },
   {
     path: 'registro-cliente',
     loadChildren: () => import('./pages/registro-cliente/registro-cliente.module').then( m => m.RegistroClientePageModule)
