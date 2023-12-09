@@ -77,7 +77,15 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'not-found',
     pathMatch: 'full'
+  },  {
+    path: 'tarjeta',
+    loadChildren: () => import('./pages/tarjeta/tarjeta.module').then( m => m.TarjetaPageModule)
   },
+  {
+    path: 'opciones',
+    loadChildren: () => import('./pages/opciones/opciones.module').then( m => m.OpcionesPageModule)
+  },
+
 
 
 ];
