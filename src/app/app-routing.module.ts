@@ -77,7 +77,8 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'not-found',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'tarjeta',
     loadChildren: () => import('./pages/tarjeta/tarjeta.module').then( m => m.TarjetaPageModule)
   },
