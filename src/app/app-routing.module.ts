@@ -73,11 +73,8 @@ const routes: Routes = [
     ...canActivate(()=>redirectUnauthorizedTo(['/login'])),
   },
 
-  {//esta va al final sino no lee las paginas
-    path: '**',
-    redirectTo: 'not-found',
-    pathMatch: 'full'
-  },  {
+
+  {
     path: 'tarjeta',
     loadChildren: () => import('./pages/tarjeta/tarjeta.module').then( m => m.TarjetaPageModule)
   },
@@ -86,7 +83,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/opciones/opciones.module').then( m => m.OpcionesPageModule)
   },
 
-
+    {//esta va al final sino no lee las paginas
+      path: '**',
+      redirectTo: 'not-found',
+      pathMatch: 'full'
+    },
 
 ];
 

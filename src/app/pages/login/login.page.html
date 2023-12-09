@@ -19,10 +19,22 @@
     </div>
   
     <br>
+
+    <div style="width: 50%; margin:auto">
+      <ion-item>
+        <ion-select [(ngModel)]="selectedValue" label="Tipo Usuario" label-placement="fixed" placeholder="">
+          <ion-select-option value="cliente">Cliente</ion-select-option>
+          <ion-select-option value="duenio">Dueño</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <br>
+    
     <!--BOTON INICIO SESION -->
-    <div style="text-align: center">
+    <div style="text-align: center"> 
       <ion-button (click)="login()">Iniciar Sesión</ion-button>
     </div>
+
   </form>
     <br>
     <!--LABEL INGRESO SIN INICIO -->
@@ -33,6 +45,9 @@
     </div>
     <br>
     <br>
+
+ 
+
     <!--LABEL NOS ESTÁS REGISTRADO -->
   
     <div class="container" style="text-align: center;">
