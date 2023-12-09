@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData, doc,getDocs, deleteDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc,getDocs,getDoc, deleteDoc } from '@angular/fire/firestore';
 import { Observable,BehaviorSubject} from 'rxjs';
 import Datos from './interface/datos'; 
 import Estacionamiento from './interface/estacionamiento';
@@ -11,6 +11,7 @@ export interface Note  {
   ancho: string;
   largo: string;
   tarifa: string;
+  email: string;
 }
 
 @Injectable({
@@ -58,6 +59,25 @@ async getNotes() {
     console.log('notes: ', notes);
     this._notes.next(notes);
     return notes;
+  } catch(e) {
+    throw(e);
+  }
+}
+
+
+async getNoteById(id: string) {
+  try {
+    const dataRef: any = doc(this.firestore, `Estacionamientos/${id}`);
+    const docSnap = await getDoc(dataRef);
+    if (docSnap.exists()) {
+      // return docSnap.data() as Note;
+      let item: any = docSnap.data();
+      item.id = docSnap.id;
+      return {...item} as Note;
+    } else {
+      console.log("No such document!");
+      throw("No such document!");
+    }
   } catch(e) {
     throw(e);
   }
