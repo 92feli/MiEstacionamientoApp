@@ -13,8 +13,8 @@ export interface Note  {
   tarifa: string;
   email: string;
   id: string;
-  Latd: string;
-  Long: string;
+  Latd: number;
+  Long: number;
 }
 export interface Nota2  {
   Nombre_esta: string;

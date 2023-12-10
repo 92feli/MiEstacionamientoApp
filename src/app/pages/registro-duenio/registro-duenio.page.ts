@@ -35,18 +35,22 @@ export class RegistroDuenioPage implements OnInit {
       tip_cli: ['Dueno'],
     });
 
+
+
     this.Regisform2 = this.formBuilder.group({
       email: [this.Regisform.value.email],
       Rut: [this.Regisform.value.Rut],
       Nombre_esta: [''],
       direccion_es: [''],
-      latitud: [''],
-      longitud: [''],
+      Latd: [''],
+      Long: [''],
       alto: [''],
       ancho: [''],
       largo: [''],
       tarifa: [''],
     });
+
+
   }
   get errorControl() {
     return this.Regisform.controls;
@@ -79,13 +83,14 @@ export class RegistroDuenioPage implements OnInit {
   }
 
   async Estacionamiento() {
+    const { latitude, longitude } = await this.getMyLocation2();
     this.Regisform2 = this.formBuilder.group({
       email: [this.Regisform.value.email],
       Rut: [this.Regisform.value.Rut],
       Nombre_esta: [this.Regisform2.value.Nombre_esta],
       direccion_es: [this.Regisform2.value.direccion_es],
-      Latd: [this.getMyLatitude()],
-      Long: [this.getMyLongitude()],
+      Latd: [latitude],
+      Long: [longitude],
       alto: [this.Regisform2.value.alto],
       ancho: [this.Regisform2.value.ancho],
       largo: [this.Regisform2.value.largo],
@@ -119,19 +124,28 @@ export class RegistroDuenioPage implements OnInit {
     await toast.present();
   }
 
-  async getMyLatitude() {
+  async getMyLocation()
+  {
     let locations = await Geolocation.getCurrentPosition();
 
+    let textLocation = "Latitud: "+locations.coords.latitude+ " - Longitud: "+ locations.coords.longitude
 
-    return locations.coords.latitude
-  }
+    console.log(locations)
+    this.showToast(textLocation)
 
-  async getMyLongitude() {
-    let locations = await Geolocation.getCurrentPosition();
+}
 
-    return locations.coords.longitude
+
+async getMyLocation2(): Promise<{ latitude: number; longitude: number }> {
+  try {
+    const location = await Geolocation.getCurrentPosition();
+    return { latitude: location.coords.latitude, longitude: location.coords.longitude };
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
 }
 
+}
 
 

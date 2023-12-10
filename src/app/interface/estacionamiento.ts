@@ -9,5 +9,7 @@ export default interface Estacionamiento {
     ancho: string;
     largo: string;
     tarifa: string;
+    Latd: number;
+    Long: number;
 
 }
