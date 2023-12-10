@@ -24,7 +24,37 @@ export class LoginPage implements OnInit {
     });
   }
 
+  selectedValue: string;
+
+ 
+
   async login() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+    // console.log(this.email + this.password);
+    if (this.Loginform.valid) {
+
+        //  await  loading.dismiss();
+        const user = await this.authService.LoginUser(this.Loginform.value.email, this.Loginform.value.password).catch((err) => {
+          this.presentToast(err)
+          console.log(err);
+          loading.dismiss();
+        })
+        
+        if (user) {
+          loading.dismiss();
+          this.router.navigate(['/home'])
+        }
+
+      } else {
+        return console.log('Please provide all the required values!');
+      }
+
+  }
+
+
+
+  async loginDuenio() {
     const loading = await this.loadingController.create();
     await loading.present();
     // console.log(this.email + this.password);
@@ -36,16 +66,21 @@ export class LoginPage implements OnInit {
         console.log(err);
         loading.dismiss();
       })
+      
 
       if (user) {
         loading.dismiss();
-        this.router.navigate(['/home'])
+        this.router.navigate(['/duenio-home'])
       }
     } else {
       return console.log('Please provide all the required values!');
     }
 
   }
+
+
+
+
   get errorControl() {
     return this.Loginform.controls;
   }
