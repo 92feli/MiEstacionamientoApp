@@ -84,8 +84,8 @@ export class RegistroDuenioPage implements OnInit {
       Rut: [this.Regisform.value.Rut],
       Nombre_esta: [this.Regisform2.value.Nombre_esta],
       direccion_es: [this.Regisform2.value.direccion_es],
-      latitud: [this.Regisform2.value.latitud],
-      longitud: [this.Regisform2.value.longitud],
+      Latd: [this.getMyLatitude()],
+      Long: [this.getMyLongitude()],
       alto: [this.Regisform2.value.alto],
       ancho: [this.Regisform2.value.ancho],
       largo: [this.Regisform2.value.largo],
@@ -119,13 +119,17 @@ export class RegistroDuenioPage implements OnInit {
     await toast.present();
   }
 
-  async getMyLocation() {
+  async getMyLatitude() {
     let locations = await Geolocation.getCurrentPosition();
 
-    let textLocation = "Latitud: " + locations.coords.latitude + " - Longitud: " + locations.coords.longitude
 
-    console.log(locations)
-    this.showToast(textLocation)
+    return locations.coords.latitude
+  }
+
+  async getMyLongitude() {
+    let locations = await Geolocation.getCurrentPosition();
+
+    return locations.coords.longitude
   }
 }
 
