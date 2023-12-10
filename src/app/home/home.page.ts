@@ -16,7 +16,7 @@ import { GeoPoint } from '@angular/fire/firestore';
     styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  
     @ViewChild('map')
     mapRef: ElementRef<HTMLElement>;
     newMap: GoogleMap;
@@ -32,6 +32,8 @@ export class HomePage {
   
 
     ngAfterViewInit() {
+      
+     
 
         this.createMap();
         this.getMyLocation();
@@ -54,8 +56,8 @@ export class HomePage {
             },
 
             coordinate: {
-                lat: -33.58849273312327, 
-                lng: -70.57904954640443,
+                lat: -33.598404937702256, 
+                lng: -70.57849669848787,
             },
             draggable: false
 
@@ -63,7 +65,7 @@ export class HomePage {
 
     }
 
-    async addMarker2(geo:GeoPoint) {
+    async addMarker2(lati,longe) {
 
         this.markerId = await this.newMap.addMarker({
 
@@ -75,8 +77,8 @@ export class HomePage {
                 height: 48,
             },
 
-            coordinate :{  lat: geo.latitude, 
-                lng: geo.longitude},
+            coordinate :{  lat: lati, 
+                           lng: longe},
 
             draggable: false
 
@@ -100,14 +102,15 @@ export class HomePage {
             },
         });
 
-        this.note.getNotes2();
-        this.noteSub = this.note.notes2.subscribe({
+        this.note.getNotes();
+        this.noteSub = this.note.notes.subscribe({
           next: (notes) => {
-            this.notes2 = notes;
-            this.notes2.forEach((notes) => {
-              const geeo = notes.geo; 
-              this.addMarker2(geeo);
-              console.log('esto es geo ' + geeo)
+            this.notes= notes;
+            this.notes.forEach((notes) => {
+              const lati = notes.Latd; 
+              const longe = notes.Long;
+              this.addMarker2(lati,longe);
+              console.log('esto es lati  ' + lati+' esto es longe '+longe)
             
           })},
           
@@ -172,6 +175,17 @@ export class HomePage {
     })
    }
 
+
+   
+async getMyLocation2(): Promise<{ latitude: number; longitude: number }> {
+  try {
+    const location = await Geolocation.getCurrentPosition();
+    return { latitude: location.coords.latitude, longitude: location.coords.longitude };
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 
    
 }
