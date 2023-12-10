@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData, doc,getDocs,getDoc, deleteDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc,getDocs,getDoc, deleteDoc, updateDoc, GeoPoint } from '@angular/fire/firestore';
 import { Observable,BehaviorSubject} from 'rxjs';
 import Datos from './interface/datos'; 
 import Estacionamiento from './interface/estacionamiento';
@@ -15,12 +15,21 @@ export interface Note  {
   id: string;
 }
 
+export interface Nota2  {
+  Nombre_esta: string;
+  email: string;
+  Latd: string;
+  Long: string;
+  geo:GeoPoint;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class RegistrarUserService {
 
   private _notes = new BehaviorSubject<Note[]>([]);
+  private _notes2 = new BehaviorSubject<Nota2[]>([]);
 
   constructor(private firestore: Firestore) { }
 
@@ -48,6 +57,11 @@ get notes() {
   return this._notes.asObservable();
 }
 
+get notes2() {
+  return this._notes2.asObservable();
+}
+
+
 async getNotes() {
   try {
     const dataRef: any = collection(this.firestore, 'Estacionamientos');
@@ -59,6 +73,23 @@ async getNotes() {
     });
     console.log('notes: ', notes);
     this._notes.next(notes);
+    return notes;
+  } catch(e) {
+    throw(e);
+  }
+}
+
+async getNotes2() {
+  try {
+    const dataRef: any = collection(this.firestore, 'cords');
+    const querySnapshot = await getDocs(dataRef);
+    const notes: Nota2[] = await querySnapshot.docs.map((doc) => {
+      let item: any = doc.data();
+      item.id = doc.id;
+      return item;
+    });
+    console.log('notes: ', notes);
+    this._notes2.next(notes);
     return notes;
   } catch(e) {
     throw(e);
