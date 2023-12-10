@@ -12,7 +12,7 @@ export interface Note  {
   largo: string;
   tarifa: string;
   email: string;
-  id?: string;
+  id: string;
 }
 
 @Injectable({

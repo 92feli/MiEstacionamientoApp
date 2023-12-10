@@ -18,11 +18,28 @@ export class DuenioHomePage implements OnInit {
   notes2: Note[] = [];
   noteSub!: Subscription;
   Regisform: FormGroup;
+  valorInput: string = '';
+  idInput: string = '';
+
+  onInputChange(event: any) {
+    this.valorInput = event.target.value;
+  }
+
+  obtenerValor() {
+    console.log('Valor del input:', this.valorInput);
+    // Puedes hacer lo que necesites con this.valorInput
+    this.notes2.forEach((notes2, index) => {
+      this.notes2[index].tarifa = this.valorInput;
+      this.idInput=this.notes2[index].id
+    this.note.updateNote(this.idInput,notes2)
+    
+
+  })
+  }
 
   constructor(private authService: AuthenticationService,private router: Router, public formBuilder: FormBuilder, private note:RegistrarUserService) { }
 
   ngOnInit() {
-
 
     this.authService.getProfile().then((user) =>{
       this.email = user?.email
@@ -70,18 +87,6 @@ filtrarYAgregar() {
     this.notes2 = this.notes.filter((note) => note.email === this.email);
   });
 }
-
-cambiar_tar(){
-  this.Regisform = this.formBuilder.group({
-    tar:[this.Regisform.value.tar],
-  })
-    this.notes2.forEach((notes2, index) => {
-        this.notes2[index].tarifa = this.Regisform.value.tar;
-
-    });
-  }
-
-
 
 
 SignOut(){

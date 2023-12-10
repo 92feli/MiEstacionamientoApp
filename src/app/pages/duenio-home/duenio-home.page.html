@@ -164,11 +164,11 @@
                           Hora</ion-card-subtitle>
                       </ion-card-header>
                       <ion-card-content>
-                        <ion-input class="custom" placeholder=""></ion-input>
+                        <ion-input (input)="onInputChange($event)" class="custom" placeholder=""></ion-input>
                         <br>
                         <ion-row>
                           <div style="margin: auto">
-                            <ion-button class="tarifa">Cambiar Tarifa</ion-button>
+                            <ion-button class="tarifa"  (click)="obtenerValor()">Cambiar Tarifa</ion-button>
                           </div>
                         </ion-row>
                       </ion-card-content>
