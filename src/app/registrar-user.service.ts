@@ -13,13 +13,14 @@ export interface Note  {
   tarifa: string;
   email: string;
   id: string;
+  
 }
 
 export interface Nota2  {
   Nombre_esta: string;
   email: string;
-  Latd: string;
-  Long: string;
+  Latd: number;
+  Long: number;
   geo:GeoPoint;
 }
 

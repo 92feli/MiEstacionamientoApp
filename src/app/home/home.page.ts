@@ -62,7 +62,7 @@ export class HomePage {
 
     }
 
-    async addMarker2(geo:GeoPoint) {
+    async addMarker2(lati,longe) {
 
         this.markerId = await this.newMap.addMarker({
 
@@ -74,8 +74,8 @@ export class HomePage {
                 height: 48,
             },
 
-            coordinate :{  lat: geo.latitude, 
-                lng: geo.longitude},
+            coordinate :{  lat: lati, 
+                lng: longe},
             draggable: false
 
         });
@@ -104,8 +104,10 @@ export class HomePage {
             this.notes2 = notes;
             this.notes2.forEach((notes) => {
               const geeo = notes.geo; 
-              this.addMarker2(geeo);
-              console.log('esto es geo ' + geeo)
+              const lati = notes.Latd
+              const longe = notes.Long
+              this.addMarker2(lati,longe);
+              console.log('esto es lati :3' + lati + ' esto es long  :3' +longe)
             
           })},
           
