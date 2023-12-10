@@ -34,6 +34,7 @@ export class HomePage {
     ngAfterViewInit() {
 
         this.createMap();
+        this.getMyLocation();
 
 
        
@@ -76,6 +77,7 @@ export class HomePage {
 
             coordinate :{  lat: geo.latitude, 
                 lng: geo.longitude},
+
             draggable: false
 
         });
@@ -129,7 +131,8 @@ export class HomePage {
       console.log(locations)
       this.showToast(textLocation)
   
-      
+
+
     }
     async showToast(mensaje: string) {
       const toast = await this.toastController.create({
