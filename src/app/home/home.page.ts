@@ -187,6 +187,5 @@ async getMyLocation2(): Promise<{ latitude: number; longitude: number }> {
   }
 }
 
-
    
 }
