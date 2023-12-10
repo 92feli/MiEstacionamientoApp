@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/authentication.service';
 import { Router } from '@angular/router';
 import Estacionamiento from 'src/app/interface/estacionamiento';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegistrarUserService, Note} from 'src/app/registrar-user.service';
 
@@ -16,8 +17,9 @@ export class DuenioHomePage implements OnInit {
   notes: Note[] = [];
   notes2: Note[] = [];
   noteSub!: Subscription;
+  Regisform: FormGroup;
 
-  constructor(private authService: AuthenticationService,private router: Router,private note:RegistrarUserService) { }
+  constructor(private authService: AuthenticationService,private router: Router, public formBuilder: FormBuilder, private note:RegistrarUserService) { }
 
   ngOnInit() {
 
@@ -26,6 +28,10 @@ export class DuenioHomePage implements OnInit {
       this.email = user?.email
       console.log(user);
   })
+
+  this.Regisform = this.formBuilder.group({
+    tar:['']
+  });
 
 
   this.note.getNotes();
@@ -64,6 +70,19 @@ filtrarYAgregar() {
     this.notes2 = this.notes.filter((note) => note.email === this.email);
   });
 }
+
+cambiar_tar(){
+  this.Regisform = this.formBuilder.group({
+    tar:[this.Regisform.value.tar],
+  })
+    this.notes2.forEach((notes2, index) => {
+        this.notes2[index].tarifa = this.Regisform.value.tar;
+
+    });
+  }
+
+
+
 
 SignOut(){
   
