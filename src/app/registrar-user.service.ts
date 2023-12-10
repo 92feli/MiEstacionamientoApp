@@ -13,6 +13,8 @@ export interface Note  {
   tarifa: string;
   email: string;
   id: string;
+  Latd: number;
+  Long: number;
   
 }
 
