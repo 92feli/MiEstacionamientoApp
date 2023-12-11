@@ -5,7 +5,7 @@ describe('DuenioHomePage', () => {
   let component: DuenioHomePage;
   let fixture: ComponentFixture<DuenioHomePage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(DuenioHomePage);
     component = fixture.componentInstance;
     fixture.detectChanges();

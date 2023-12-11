@@ -5,7 +5,7 @@ describe('RecuperarContrasenaPage', () => {
   let component: RecuperarContrasenaPage;
   let fixture: ComponentFixture<RecuperarContrasenaPage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(RecuperarContrasenaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();

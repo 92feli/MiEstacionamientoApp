@@ -5,7 +5,7 @@ describe('ReservaClientePage', () => {
   let component: ReservaClientePage;
   let fixture: ComponentFixture<ReservaClientePage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(ReservaClientePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -15,3 +15,6 @@ describe('ReservaClientePage', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+
