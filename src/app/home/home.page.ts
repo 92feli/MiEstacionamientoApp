@@ -83,7 +83,9 @@ export class HomePage {
             draggable: false
 
         });
-
+        this.newMap.setOnMarkerClickListener(async (markerId) => {
+      console.log(markerId);
+    });
     }
 
     
