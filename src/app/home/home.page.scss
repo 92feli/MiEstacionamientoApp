@@ -6,6 +6,13 @@ capacitor-google-map {
   height: 100%;
 }
 
+ion-content {
+  --background: transparent;
+}
+
+body {
+  background: transparent;
+}
 
 ion-card.reserve{
   margin-left: 3%;
