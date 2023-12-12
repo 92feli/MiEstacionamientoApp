@@ -5,9 +5,44 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tarjeta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br><br><br>
+  <ion-img src="assets/images/logo-transparent-crop.png" alt="Logo_mi_parking"
+    style="width: 40%; padding-top: 15%; margin: auto;"></ion-img>
+  <br>
+  <br>
+
+  <div class="container" style="width: 70%; margin: auto;">
+    <ion-card-title style="text-align: center;" id="category-font">Agregar método de pago</ion-card-title>
+    <br>
+    <ion-input class="custom" placeholder="Número de Tarjeta"></ion-input>
+
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-input class="custom" placeholder="Fecha de Vencimiento" type="password"></ion-input>
+
+
+      </ion-col>
+      <ion-col>
+
+        <ion-input class="custom" placeholder="CVV" type="password"></ion-input>
+
+      </ion-col>
+    </ion-row>
+
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <ion-row style="text-align: center;">
+      <ion-col>
+        <ion-button>Agregar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="back" href="/home.html">Volver</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
 </ion-content>
